@@ -312,3 +312,35 @@ print(dict)'''
 
 print(balance('{{}}'))'''
 
+#take input having elements separated by , and positive int separated by ; 
+#reverse parts of string of size of positive int and keep extra part as it is and print op
+#asked in JP Morgan
+'''
+#ip=[1,2,3,4,5;2]
+#op=[2,1,4,3,5]
+
+#accept input as a list having elements separated by , and having positive int separated by ;
+#separate ip into list and positive int
+ip = input("Enter\n")
+x1=ip[1:len(ip)-1]
+a1=x1.split(';')
+ip1=a1[0].split(',')
+pint=int(a1[1])
+
+#find number of parts and remaining elements of list
+parts=len(ip1)//pint
+extra=ip1[parts*pint:]
+
+#logic to generate op
+temp=[]
+start,end=0,pint
+for i in range(parts):
+    torev= ip1[start:end]
+    torev.reverse()
+    temp.extend(torev)
+    start=start+end
+    end=end+pint
+
+temp.extend(extra)
+print(temp)
+'''
