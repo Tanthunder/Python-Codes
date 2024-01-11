@@ -12,7 +12,8 @@ x= palindrome(input)
 print(x)'''
 
 #using for loop
-'''def palindrome(input):
+"""def palindrome(input):
+    
     for i in range(len(input)):
         if input[i] != input[len(input)-i-1]:
             return('not palindrome')
@@ -21,7 +22,8 @@ print(x)'''
 
 input = input("Enter input")
 x= palindrome(input)
-print(x)'''
+print(x)
+"""
 #using reversed and join function
 #reversed returns object..so we can iterate over it
 
@@ -32,8 +34,8 @@ print(x)'''
     temp = input
     value = 0
     while(temp>0):
-        x = temp%10#3 2
-        value = value*10 + x#3 
+        x = temp%10  #3 2
+        value = value*10 + x #3 
         temp = temp//10 #12
     if input == value:
         return 'palindrome'
@@ -45,7 +47,7 @@ x= palindrome(input)
 print(x)'''
 
 #fibonacci series 0 1 1 2 3 5 8
-# iteration using while and without using third variable
+#iteration using while and without using third variable
 
 '''def fibonnaci(n):
     a=0
@@ -177,15 +179,15 @@ prime(2)'''
 
 # display all prime numbers for particular range
 
-'''def prime(st,end):
+def prime(st,end):
     for i in range(st,end+1):
-        for j in range(2,end//2+1):
-            if i%2 ==0:
+        for j in range(2,i//2+1):
+            if i%j ==0:
              break
         else:
           print(i)
 
-prime(3,9)'''
+prime(3,20)
 
 #string modification
 #input : Good_Morning
@@ -345,4 +347,37 @@ temp.extend(extra)
 print(temp)
 '''
 
-#checking git
+
+#Find the longest common prefix string amongst an array of strings
+# str1 = ["flower","flow","flight"]
+# op = "fl"
+# str2 = ["abc","pqr","xyz"]
+# op = ""
+"""words = ["abc","pqr","xyz"]
+prefix = words[0]
+for word in words[1:]:
+   count = 0
+   for i in range(len(prefix)):
+      if (i < len(word)) and (i < len(prefix)) and (word[i] == prefix[i]):
+         count+=1
+      else:
+          break
+   prefix = prefix[:count]
+print(prefix)"""
+
+"""
+Write sql query to get epmloyee having higher salay than his manager.
+Employee table:
++----+-------+--------+-----------+
+| id | name  | salary | managerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | Null      |
+| 4  | Max   | 90000  | Null      |
++----+-------+--------+-----------+
+
+select emp1.name from employee as emp1 
+join employee as emp2 on emp1.manid = emp2.id 
+where emp2.salary < emp1.salary
+"""
