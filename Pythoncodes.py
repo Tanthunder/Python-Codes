@@ -381,3 +381,41 @@ select emp1.name from employee as emp1
 join employee as emp2 on emp1.manid = emp2.id 
 where emp2.salary < emp1.salary
 """
+
+
+"""
+def visible_buildings(matrix):
+    if not matrix:
+        return 0
+
+    n = len(matrix)
+    count = n  # Counting the first building of each row which is always visible
+    max_heights = [matrix[i][0] for i in range(n)]
+    print(max_heights)
+    zeros = 0
+    for i in max_heights:
+        if i == 0:
+            zeros+=1
+
+    for j in range(1, n):  # Iterate through each column
+        max_height = matrix[0][j]
+        for i in range(1, n):  # Iterate through each row in the column
+            if matrix[i][j] > max_heights[j]:
+                count += 1
+                max_heights[j] = matrix[i][j]
+                
+    return count-zeros
+
+
+
+# Example usage:
+if __name__ == "__main__":
+    s = "3 0 0 2 2 0 1 2 1 0 3 4 0 0 0 2"
+    elements = list(map(int, s.strip().split()))
+    n = int(len(elements) ** 0.5)  # Calculate the size of the square matrix
+    matrix = [elements[i:i+n] for i in range(0, len(elements), n)]
+    print(matrix)
+    visible_count = visible_buildings(matrix)
+    print("Number of visible buildings from the front:", visible_count)
+
+"""
