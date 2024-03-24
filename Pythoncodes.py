@@ -418,4 +418,4 @@ if __name__ == "__main__":
     visible_count = visible_buildings(matrix)
     print("Number of visible buildings from the front:", visible_count)
 
-"""
+""" 
